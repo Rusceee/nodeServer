@@ -1,0 +1,43 @@
+<!DOCTYPE html>                                <!-- HTML5. -->
+<html lang="it">                               <!-- Italiano. -->
+
+<head>                                         <!-- Head. -->
+    <meta charset="UTF-8">                     <!-- UTF-8. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive. -->
+    <title>Weather API</title>                 <!-- Titolo. -->
+    <link rel="stylesheet" href="/api/v1/css/navbar.css"> <!-- CSS navbar. -->
+    <link rel="stylesheet" href="/api/v1/css/footer.css"> <!-- CSS footer. -->
+    <link rel="stylesheet" href="/api/v1/css/weather.css"> <!-- CSS weather. -->
+    <link rel="stylesheet" href="/api/v1/css/fbi.css"> <!-- CSS wanted. -->
+</head>                                        <!-- Chiude head. -->
+
+<body>                                         <!-- Body. -->
+
+    <!-- NAVBAR -->                            <!-- Inizio navbar. -->
+    <div id="navbar"></div>                    <!-- Div navbar. -->
+    <script>                                   //<!-- Caricamento navbar. -->
+        fetch("/api/v1/components/navbar.html")       //<!-- Scarica navbar. -->
+            .then(res => res.text())           // Testo.
+            .then(html => document.getElementById("navbar").innerHTML = html); // Inserisce.
+    </script>                                  <!-- Chiude script. -->
+
+    <!-- WEATHER CONTENT -->                   <!-- Contenuto meteo. -->
+    <main class="weather-wrapper fbi-wrapper">              <!-- Wrapper. -->
+        <section class="weather-box fbi-box">              <!-- Box form. -->
+            <h2>Scheda FBI del giorno</h2>               <!-- Titolo. -->
+            <p class="subtitle">Una persona ricercata o una segnalazione dall'elenco FBI</p> <!-- Istruzioni. -->
+            <div id="fbi-result" aria-live="polite">Caricamento...</div>
+        </section>                                
+    </main>                                     <!-- Chiude wrapper. -->
+
+    <!-- FOOTER -->                            <!-- Inizio footer. -->
+    <div id="footer"></div>                    <!-- Div footer. -->
+    <script>                                   //<!-- Caricamento footer. -->
+        fetch("/api/v1/components/footer.html")       //<!-- Scarica footer. -->
+            .then(res => res.text())           // Testo.
+            .then(html => document.getElementById("footer").innerHTML = html); // Inserisce.
+    </script>                                  <!-- Chiude script. -->
+    <script src="/api/v1/js/fbi.js"></script>     <!-- JS wanted. -->
+</body>                                        <!-- Chiude body. -->
+
+</html>                                        <!-- Chiude HTML. -->

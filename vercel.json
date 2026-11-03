@@ -1,0 +1,25 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "gateway": {
+      "root": "backend/gateway",
+      "entrypoint": "src/gateway.js"
+    },
+    "auth": {
+      "root": "backend/auth-service",
+      "entrypoint": "src/authserver.js"
+    },
+    "api": {
+      "root": "backend/service",
+      "entrypoint": "src/server.js"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "gateway"
+      }
+    }
+  ]
+}
