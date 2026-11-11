@@ -11,4 +11,7 @@ start "Gateway" cmd /k "cd backend\gateway && node src\gateway.js"
 :: AVVIO DEL SERVIZIO PYTHON WANTED
 start "Wanted Service" cmd /k "cd backend\wanted-service && python server.py"
 
+:: AVVIO DEL SERVIZIO PERSISTENCE
+start "Persistence Service" cmd /k "cd backend\persistence-service && node src\server.js"
+
 pause

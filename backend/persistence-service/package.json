@@ -1,0 +1,20 @@
+{
+  "name": "persistence-service",
+  "version": "1.0.0",
+  "description": "Persistence service - serves an image to logged-in users",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.8",
+    "express": "^5.2.1"
+  }
+}
+

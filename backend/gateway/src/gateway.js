@@ -4,6 +4,14 @@ const config = require('../config/env');
 
 const app = express();
 
+app.use("/api/v1/persistence", createProxyMiddleware({
+  target: config.PERSISTENCE_SERVICE_URL,
+  changeOrigin: true,
+  pathRewrite: {
+    "^/api/v1/persistence": ""
+  }
+}));
+
 app.use("/api/v1/wanted", createProxyMiddleware({
   target: config.WANTED_SERVICE_URL,
   changeOrigin: true,

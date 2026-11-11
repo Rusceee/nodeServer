@@ -1,0 +1,92 @@
+/* ==========================================================================
+   PERSISTENCE - Pulsante e visualizzazione inline
+   ========================================================================== */
+
+/* PULSANTE PERSISTENCE (visibile solo per utenti loggati) */
+.persistence-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(109, 40, 217, 0.3);
+    margin-top: 20px;
+}
+
+.persistence-btn:hover {
+    background: linear-gradient(135deg, #7c3aed, #5b21b6);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(109, 40, 217, 0.4);
+}
+
+.persistence-btn:active {
+    transform: translateY(0);
+}
+
+.persistence-btn .btn-icon {
+    font-size: 18px;
+}
+
+/* AREA RISULTATO (JSON + immagine inline nella pagina) */
+.persistence-result {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Blocco JSON */
+.persistence-json {
+    background: #1e293b;
+    color: #a5f3fc;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    text-align: left;
+    overflow-x: auto;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    line-height: 1.5;
+}
+
+/* Immagine inline */
+.persistence-image {
+    max-width: 100%;
+    max-height: 500px;
+    border-radius: 12px;
+    object-fit: contain;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    animation: fadeInImg 0.4s ease;
+}
+
+@keyframes fadeInImg {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Messaggio di errore */
+.persistence-error {
+    color: #dc2626;
+    font-size: 14px;
+    padding: 12px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+/* Messaggio di caricamento */
+.persistence-loading {
+    color: #64748b;
+    font-size: 14px;
+    padding: 16px;
+}
