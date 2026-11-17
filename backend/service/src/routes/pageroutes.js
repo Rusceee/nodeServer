@@ -19,7 +19,7 @@ router.get("/about", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-    res.sendFile(path.join(paths.PUBLIC, "  signup.html"));
+    res.sendFile(path.join(paths.PUBLIC, "signup.html"));
 });
 
 router.get("/weather", (req, res) => {
@@ -28,6 +28,10 @@ router.get("/weather", (req, res) => {
 
 router.get("/contact", (req, res) => {
     res.sendFile(path.join(paths.PUBLIC, "contact.html"));
+});
+
+router.get("/database", (req, res) => {
+    res.sendFile(path.join(paths.PUBLIC, "database.html"));
 });
 
 router.get("/wanted", (req, res) => {

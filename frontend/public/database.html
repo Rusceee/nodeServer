@@ -1,0 +1,53 @@
+<!DOCTYPE html>                                <!-- Dichiara il documento HTML5. -->
+<html lang="it">                               <!-- Imposta la lingua italiana. -->
+
+<head>                                         <!-- Inizia la sezione head. -->
+    <meta charset="UTF-8">                     <!-- Codifica UTF-8. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive per schermi mobili. -->
+    <title>Database - Inserimento Dati</title> <!-- Titolo della pagina. -->
+    <link rel="stylesheet" href="/api/v1/css/navbar.css">   <!-- Foglio di stile condiviso della navbar. -->
+    <link rel="stylesheet" href="/api/v1/css/footer.css">   <!-- Foglio di stile condiviso del footer. -->
+    <link rel="stylesheet" href="/api/v1/css/database.css"> <!-- Foglio di stile specifico del database. -->
+    <script src="/api/v1/js/navbar.js"></script>           <!-- Script per inizializzare la navbar e la sessione utente. -->
+</head>                                        <!-- Chiude head. -->
+
+<body>                                         <!-- Inizia il body. -->
+
+    <!-- NAVBAR CONDIVISA -->
+    <div id="navbar">                          <!-- Div contenitore della navbar. -->
+        <script>                               // Caricamento asincrono della navbar condivisa.
+            fetch('/api/v1/components/navbar.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('navbar').innerHTML = html;
+                    initNavbar();              // Inizializza pulsanti login/logout e stato utente.
+                });
+        </script>
+    </div>                                     <!-- Chiude div navbar. -->
+
+    <!-- CONTENUTO PRINCIPALE -->
+    <div class="total">                        <!-- Wrapper principale del contenuto (centrato tra navbar e footer). -->
+        <div class="container">                <!-- Box contenitore del form. -->
+            <h1>Da Node a MongoDB</h1>         <!-- Titolo principale corretto con chiusura </h1>. -->
+            <form method="post" action="/">    <!-- Form di invio dati verso la rotta POST /. -->
+                <label>Il nuovo animale acquistato</label> <!-- Etichetta del campo. -->
+                <input type="text" name="nome" placeholder="Inserisci il nome..." required> <!-- Campo testo obbligatorio. -->
+                <input type="submit" value="Aggiungi"> <!-- Pulsante di invio. -->
+            </form>                            <!-- Chiude form. -->
+        </div>                                 <!-- Chiude container. -->
+    </div>                                     <!-- Chiude total. -->
+
+    <!-- FOOTER CONDIVISO -->
+    <div id="footer">                          <!-- Div contenitore del footer. -->
+        <script>                               // Caricamento asincrono del footer condiviso.
+            fetch('/api/v1/components/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer').innerHTML = html;
+                });
+        </script>
+    </div>                                     <!-- Chiude div footer. -->
+
+</body>                                        <!-- Chiude body. -->
+
+</html>                                        <!-- Chiude HTML. -->

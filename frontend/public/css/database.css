@@ -1,0 +1,133 @@
+/* ===== RESET GENERALE ===== */
+* {                                            /* Selettore universale. */
+    box-sizing: border-box;                    /* Include bordi e padding nelle dimensioni. */
+    margin: 0;                                 /* Azzera i margini esterni predefiniti. */
+    padding: 0;                                /* Azzera i padding interni predefiniti. */
+}                                              /* Chiude il reset. */
+
+/* ===== CORPO DELLA PAGINA (BODY) ===== */
+body {                                         /* Selettore body. */
+    font-family: Arial, sans-serif;            /* Imposta il font principale e fallback. */
+    background: linear-gradient(135deg, #e3e9f0, #cfd9e8); /* Gradiente coerente con il resto dell'app. */
+    display: flex;                             /* Layout flexbox. */
+    flex-direction: column;                    /* Dispone navbar, contenuto e footer in colonna. */
+    min-height: 100vh;                         /* Altezza minima 100% viewport per spingere il footer in basso. */
+}                                              /* Chiude body. */
+
+/* ===== WRAPPER CENTRALE ===== */
+.database-wrapper,
+.total {                                       /* Contenitore principale tra navbar e footer. */
+    flex: 1;                                   /* Occupa tutto lo spazio verticale rimanente. */
+    display: flex;                             /* Layout flex. */
+    justify-content: center;                   /* Centra la scheda orizzontalmente. */
+    align-items: center;                       /* Centra la scheda verticalmente. */
+    padding: 40px 20px;                        /* Spazio di sicurezza sopra, sotto e sui lati. */
+}                                              /* Chiude wrapper. */
+
+/* ===== SCHEDA BIANCA (DATABASE BOX) ===== */
+.database-box,
+.container {                                   /* Box bianco a scheda per il form. */
+    background: #ffffff;                       /* Sfondo bianco pulito. */
+    padding: 35px 30px;                        /* Spazio interno. */
+    border-radius: 12px;                       /* Angoli arrotondati coerenti con login e signup. */
+    width: 100%;                               /* Larghezza fluida. */
+    max-width: 380px;                          /* Larghezza massima ideale per desktop. */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Ombra morbida per dare profondità. */
+}                                              /* Chiude database-box. */
+
+/* Titolo della scheda */
+.database-box h1,
+.database-box h2,
+.container h1,
+.container h2 {                                /* Selettore titolo h1 / h2. */
+    text-align: center;                        /* Centra il testo. */
+    margin-bottom: 16px;                       /* Margine inferiore verso il form o il sottotitolo. */
+    color: #1e293b;                            /* Colore grigio scuro elegante. */
+    font-weight: 700;                          /* Grassetto. */
+    font-size: 24px;                           /* Dimensione del carattere. */
+}                                              /* Chiude titolo. */
+
+/* Sottotitolo descrittivo */
+.database-box .subtitle,
+.container .subtitle {                         /* Sottotitolo informativo. */
+    text-align: center;                        /* Centrato. */
+    font-size: 14px;                           /* Dimensione ridotta. */
+    color: #64748b;                            /* Grigio ardesia secondario. */
+    margin-bottom: 24px;                       /* Distanza dai campi del form. */
+}                                              /* Chiude subtitle. */
+
+/* ===== CAMPI DEL FORM ===== */
+.form-group {                                  /* Contenitore per ogni coppia label + input. */
+    margin-bottom: 18px;                       /* Spaziatura tra un campo e l'altro. */
+}                                              /* Chiude form-group. */
+
+/* Etichetta (label) */
+.database-box label,
+.container label {                             /* Selettore per le etichette. */
+    display: block;                            /* Occupa l'intera riga sopra il campo. */
+    margin-bottom: 6px;                        /* Spazio tra etichetta e input. */
+    color: #475569;                            /* Colore testo dell'etichetta. */
+    font-size: 14px;                           /* Dimensione testo. */
+    font-weight: 600;                          /* Testo semi-grassetto. */
+}                                              /* Chiude label. */
+
+/* Campi di testo (input) */
+.database-box input[type="text"],
+.container input[type="text"] {                /* Campi di input testuali. */
+    width: 100%;                               /* Larghezza piena del contenitore. */
+    padding: 12px 14px;                        /* Spazio interno confortevole per la digitazione. */
+    margin-bottom: 14px;                       /* Spaziatura inferiore se non si usa .form-group. */
+    border: 2px solid #d0d0d0;                 /* Bordo grigio chiaro di default. */
+    border-radius: 6px;                        /* Angoli leggermente arrotondati. */
+    font-size: 15px;                           /* Dimensione font. */
+    color: #1e293b;                            /* Colore testo digitato. */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Transizione morbida. */
+}                                              /* Chiude input text. */
+
+/* Focus sul campo di testo */
+.database-box input[type="text"]:focus,
+.container input[type="text"]:focus {          /* Stato quando l'utente clicca o seleziona il campo. */
+    border-color: #0078ff;                     /* Bordo azzurro coordinato con la palette del sito. */
+    box-shadow: 0 0 0 3px rgba(0, 120, 255, 0.15); /* Alone azzurro luminoso per feedback visivo. */
+    outline: none;                             /* Rimuove l'outline predefinito del browser. */
+}                                              /* Chiude focus. */
+
+/* Placeholder */
+.database-box input[type="text"]::placeholder,
+.container input[type="text"]::placeholder {
+    color: #94a3b8;                            /* Grigio tenue per il testo segnaposto. */
+}                                              /* Chiude placeholder. */
+
+/* ===== PULSANTE DI INVIO (SUBMIT) ===== */
+.database-box button[type="submit"],
+.database-box input[type="submit"],
+.container button[type="submit"],
+.container input[type="submit"] {              /* Supporta sia <button> sia <input type="submit">. */
+    width: 100%;                               /* Occupa tutta la larghezza. */
+    padding: 12px;                             /* Spazio interno. */
+    margin-top: 6px;                           /* Spazio sopra il bottone. */
+    background: #0078ff;                       /* Azzurro istituzionale del sito. */
+    color: #ffffff;                            /* Testo bianco. */
+    border: none;                              /* Rimuove bordo nativo. */
+    border-radius: 6px;                        /* Angoli arrotondati uguali agli input. */
+    font-size: 16px;                           /* Dimensione carattere leggibile. */
+    font-weight: 600;                          /* Testo in grassetto. */
+    cursor: pointer;                           /* Cursore puntatore al passaggio del mouse. */
+    transition: background 0.25s ease, transform 0.1s ease, box-shadow 0.2s ease; /* Transizioni fluide. */
+    box-shadow: 0 2px 6px rgba(0, 120, 255, 0.25); /* Leggera ombreggiatura sul pulsante. */
+}                                              /* Chiude submit. */
+
+.database-box button[type="submit"]:hover,
+.database-box input[type="submit"]:hover,
+.container button[type="submit"]:hover,
+.container input[type="submit"]:hover {        /* Effetto al passaggio del mouse. */
+    background: #005fcc;                       /* Tonalità più scura di blu. */
+    box-shadow: 0 4px 12px rgba(0, 120, 255, 0.35); /* Ombra più pronunciata. */
+}                                              /* Chiude hover. */
+
+.database-box button[type="submit"]:active,
+.database-box input[type="submit"]:active,
+.container button[type="submit"]:active,
+.container input[type="submit"]:active {       /* Effetto durante il click. */
+    transform: scale(0.98);                    /* Leggera compressione per simulare la pressione fisica. */
+}                                              /* Chiude active. */
