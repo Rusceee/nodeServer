@@ -28,14 +28,6 @@ app.use("/api/v1/auth", createProxyMiddleware({
   }
 }));
 
-// app.use("/api/v1/database", createProxyMiddleware({
-//   target: config.DATABASE_SERVICE_URL,
-//   changeOrigin: true,
-//   pathRewrite: {
-//     "^/api/v1/database": ""
-//   }
-// }));
-
 app.use("/api/v1", createProxyMiddleware({
   target: config.SERVICE_URL,
   changeOrigin: true,

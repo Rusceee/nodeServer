@@ -11,6 +11,15 @@ const pageroutes = require("./routes/pageroutes");
 const weather = require("./routes/weather");            // per gestire la parte di routing delle pagine statiche, importo il file pageroutes.js che contiene le route per le pagine statiche.
 const login = require("./routes/login");
 const signup = require("./routes/signup");
+const database = require("./routes/database"); // Importa le route per la gestione del database.
+const mongoose = require("mongoose");            // Usa l'istanza mongoose del service.
+
+// Connessione a MongoDB Atlas usando le credenziali dal .env del Database.
+const dbEnv = require("../../Database/config/env");
+const mongoUrl = dbEnv.MONGODB_URL || dbEnv.MONGODB_URI;
+mongoose.connect(mongoUrl)
+    .then(() => console.log("Service: connesso a MongoDB"))
+    .catch(err => console.error("Service: errore connessione MongoDB:", err));
 // il body parser serve per leggere i dati inviati dal form
 app.use(bodyParser.json());                    // Abilita la lettura del corpo in formato JSON.
 app.use(bodyParser.urlencoded({ extended: true })); // Abilita la lettura dei dati inviati dai form HTML.
@@ -23,6 +32,7 @@ app.use("/", pageroutes); // Usa le route definite in pageroutes.js per tutte le
 app.use("/", weather);  // usa le route di weather
 app.use("/", login);
 app.use("/", signup);
+app.use("/", database); // Usa le route definite in database.js per tutte le richieste alla radice.
 //definizione dello stato visualizzabile da prompt
 app.listen(port, () => {                        // Avvia il server sulla porta definita.
     console.log("Server in ascolto alla porta " + port); // Scrive in console la porta di ascolto.
