@@ -12,14 +12,11 @@ const weather = require("./routes/weather");            // per gestire la parte 
 const login = require("./routes/login");
 const signup = require("./routes/signup");
 const database = require("./routes/database"); // Importa le route per la gestione del database.
-const mongoose = require("mongoose");            // Usa l'istanza mongoose del service.
+const mongoose = require("mongoose");            // Istanza mongoose del service.
+const connetti = require("../../Database/src/connessione"); // Importa la funzione di connessione a MongoDB.
 
-// Connessione a MongoDB Atlas usando le credenziali dal .env del Database.
-const dbEnv = require("../../Database/config/env");
-const mongoUrl = dbEnv.MONGODB_URL || dbEnv.MONGODB_URI;
-mongoose.connect(mongoUrl)
-    .then(() => console.log("Service: connesso a MongoDB"))
-    .catch(err => console.error("Service: errore connessione MongoDB:", err));
+connetti(mongoose); // Avvia la connessione passando l'istanza mongoose del service.
+
 // il body parser serve per leggere i dati inviati dal form
 app.use(bodyParser.json());                    // Abilita la lettura del corpo in formato JSON.
 app.use(bodyParser.urlencoded({ extended: true })); // Abilita la lettura dei dati inviati dai form HTML.
